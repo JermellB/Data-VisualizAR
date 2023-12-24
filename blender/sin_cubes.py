@@ -47,8 +47,7 @@ fcount = 10
 invfcount = 1.0 / (fcount - 1)
 
 # If the default frame range is 0, then default to 1 .. 150.
-frange = bpy.context.scene.frame_end - bpy.context.scene.frame_start
-if frange == 0:
+if (frange := bpy.context.scene.frame_end - bpy.context.scene.frame_start) == 0:
     bpy.context.scene.frame_end = 150
     bpy.context.scene.frame_start = 0
     frange = 150
